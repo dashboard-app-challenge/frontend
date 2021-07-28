@@ -1,6 +1,6 @@
 import { Component } from "react";
-import { ILoginReq } from '../../models/dtos/login-req.dto';
-import authService from '../../services/auth.service';
+import { ILoginReq } from "../../models/dtos/login-req.dto";
+import authService from "../../services/auth.service";
 
 class LoginComponent extends Component {
   public state = {
@@ -21,7 +21,7 @@ class LoginComponent extends Component {
     authService
       .login(req)
       .then(() => {
-        window.location.href='/dashboard';
+        window.location.href = "/dashboard";
       })
       .catch((error: any) => {
         if (error.response && error.response.data) {
@@ -58,7 +58,9 @@ class LoginComponent extends Component {
               className="form-control"
               placeholder="Username"
               value={this.state.username || ""}
-              onInput={(e) => this.setState({ username: e.currentTarget.value })}
+              onInput={(e) =>
+                this.setState({ username: e.currentTarget.value })
+              }
             />
           </div>
         </div>
