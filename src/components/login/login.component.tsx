@@ -88,7 +88,3 @@ class LoginComponent extends Component {
 }
 
 export default LoginComponent;
-
-// LoginComponent.contextType = {
-//   router: React
-// }
