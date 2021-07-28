@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Link, Switch } from 'react-router-dom';
 import { Route } from "react-router";
 import './App.css';
 import LoginComponent from './components/login/login.component';
+import DashboardComponent from './components/dashboard/dashboard.component';
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
             <Route exact path="/" component={LoginComponent} />
 
             <Route path="/login" component={LoginComponent} />
+
+            <Route path="/dashboard" component={DashboardComponent} />
           </Switch>
         </div>
       </div>

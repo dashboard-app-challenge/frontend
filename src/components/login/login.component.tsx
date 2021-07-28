@@ -1,15 +1,9 @@
-import React, { Component } from "react";
-import {} from "../../enums";
+import { Component } from "react";
 import { ILoginReq } from '../../models/dtos/login-req.dto';
 import authService from '../../services/auth.service';
 
 class LoginComponent extends Component {
-  // eslint-disable-next-line @typescript-eslint/no-useless-constructor
-  constructor(props: any) {
-    super(props);
-  }
-
-  state = {
+  public state = {
     email: "",
     username: "",
     pass: "",
@@ -26,10 +20,10 @@ class LoginComponent extends Component {
 
     authService
       .login(req)
-      .then((response) => {
-        console.warn(response);
+      .then(() => {
+        window.location.href='/dashboard';
       })
-      .catch((error) => {
+      .catch((error: any) => {
         if (error.response && error.response.data) {
           console.error(error.response.data.errMsg);
           return;
@@ -94,3 +88,7 @@ class LoginComponent extends Component {
 }
 
 export default LoginComponent;
+
+// LoginComponent.contextType = {
+//   router: React
+// }
